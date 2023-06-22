@@ -46,6 +46,7 @@ init:
 		sed -i -e 's/spec:/spec:\n  size: 1/' "./config/samples/$(OPERATOR_GROUP_NAME)_$(OPERATOR_API_VERSION)_$(OPERATOR_KIND_LC).yaml" ; \
 		cp ../templates/deployment.yml roles/$(OPERATOR_KIND_LC)/templates/. ; \
 		cp ../templates/service.yml roles/$(OPERATOR_KIND_LC)/templates/. ; \
+		cp ../templates/route.yml roles/$(OPERATOR_KIND_LC)/templates/. ; \
 		cp ../tasks/main.yml roles/$(OPERATOR_KIND_LC)/tasks/. ; \
 		cd config/default; kustomize edit set namespace $(OPERATOR_NAMESPACE) ; \
 		if [ -f "../tasks/route.yml" ]; then \
