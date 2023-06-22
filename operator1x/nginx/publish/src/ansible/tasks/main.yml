@@ -11,7 +11,7 @@
     state: present
     definition: "{{lookup('template', 'service.yml') | from_yaml}}"
 
-#- name: Create the Operator Route
-#  k8s:
-#    state: present
-#    definition: "{{lookup('template', 'route.yml') | from_yaml}}"
+- name: Create the Operator Route
+  k8s:
+    state: present
+    definition: "{{lookup('template', 'route.yml') | from_yaml}}"
